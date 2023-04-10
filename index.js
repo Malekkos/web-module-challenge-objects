@@ -47,21 +47,16 @@ Using the burger object below do the following:
   For example: burger.discount("teacher") would return 13.5 and burger.discount("public") would return 16.2
 */
 
-
+// FROM THE SOLUTION VIDEO
 const burger = {
   name: "Burger", 
   price: 18, 
   category: "Lunch", 
   discount: function(string) {
-    if (string === "teacher") {
-      let subtract1 =  this.price * 0.25;
-      return this.price = this.price - subtract1;
-    } else if (string === "student") {
-      let subtract = this.price * 0.25;
-      return this.price = this.price - subtract;
+    if (string === "teacher" || string === "student") {
+      return this.price - (this.price * 0.25);
     } else if (string === "public") {
-      let subtract2 = this.price* 0.1;
-      return this.price = this.price - subtract2;
+      return this.price - (this.price * 0.1);
     }
   }
 }
@@ -91,7 +86,7 @@ Reyna's feedback is missing! Use what you know to do the following: (no function
   1. Add this feedback to Reyna's rating - "this place is chill with really cool people, great for getting work done on weekdays"
   2. log the reviews array to the console to check your work
 */
-
+reviews[7].feedback = "this place is chill with really cool people, great for getting work done on weekdays";
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -130,7 +125,6 @@ function getReviewByIndex(arr, num) {
 //   }
 //changed my mind   }
 return `${arr[num].name} gave the restaurant a ${arr[num].rating} star review, and their feedback was: ${arr[num].feedback}`;
-
 }
 
   
@@ -148,11 +142,11 @@ Use the getLastReview function below to do the following:
 */
 
 
-function getLastReview(/*Your code here*/) {
-  /*Your code here*/
+function getLastReview(arr) {
+  return `${arr[arr.length -1].name} gave the restaurant a ${arr[arr.length -1].rating} star review, and their feedback was: ${arr[arr.length -1].feedback}`;
 } 
 
-
+//forgot index thingy and minor spelling
 
 ///////////////🍔☕️🍽 STRETCH🍔☕️🍽////////////////////
 
