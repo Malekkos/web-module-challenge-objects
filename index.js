@@ -31,7 +31,8 @@ Test your createMenuItems function by doing the following:
   
   For example: createMenuItem("pizza",5,"lunch") would return this as the object: {name:"Pizza",price:5,category:"lunch"}
 */
-
+createMenuItem("Enchirito", "23$", "mexican food");
+createMenuItem("SSunday", "3$", "Boat", "desert");
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -51,7 +52,18 @@ const burger = {
   name: "Burger", 
   price: 18, 
   category: "Lunch", 
-  
+  discount: function(string) {
+    if (string === "teacher") {
+      let subtract1 =  this.price * 0.25;
+      return this.price = this.price - subtract1;
+    } else if (string === "student") {
+      let subtract = this.price * 0.25;
+      return this.price = this.price - subtract;
+    } else if (string === "public") {
+      let subtract2 = this.price* 0.1;
+      return this.price = this.price - subtract2;
+    }
+  }
 }
 
 
@@ -74,7 +86,6 @@ Using the reviews array above:
 */
 
 
-
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4 (not auto-tested): 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Reyna's feedback is missing! Use what you know to do the following: (no function needed) 
   1. Add this feedback to Reyna's rating - "this place is chill with really cool people, great for getting work done on weekdays"
@@ -95,10 +106,10 @@ Use the addReview function below to do the following:
 */
 
 
-function addReview(/*Your Code Here */){
-  /*Your Code Here */
+function addReview(arr, name, rating, feedback){
+  arr.push({name, rating, feedback});
+  return arr;
 }
-
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
